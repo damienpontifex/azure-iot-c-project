@@ -4,7 +4,7 @@ project(iot_sample)
 include_directories(.)
 
 set(iot_sample_c_files
-	main.c
+	main.cpp
 )
 
 set(iot_sample_h_files
@@ -15,6 +15,11 @@ add_executable(
 	${iot_sample_c_files}
 	${iot_sample_h_files}
 )
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "-std=c++14")
+set(skip_unittests ON)
 
 add_subdirectory(lib/azure-iot-sdks/c)
 include_directories(lib/azure-iot-sdks/c/iothub_client/inc)
