@@ -1,0 +1,3 @@
+[submodule "lib/azure-iot-sdks"]
+	path = lib/azure-iot-sdks
+	url = https://github.com/Azure/azure-iot-sdks.git
