@@ -3,7 +3,7 @@
 #include "iothub_client.h"
 #include "iothubtransportamqp.h"
 
-static const char *connectionString = "HostName=dev-chargesync.azure-devices.net;DeviceId=Damien;SharedAccessKey=fn7pPYr+VX4UvH7dEukh8SkqFDAMcZLAkmmMRJbEx9o=";
+static const char *connectionString = "[connection string]";
 
 int main()
 {
