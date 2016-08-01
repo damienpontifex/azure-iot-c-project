@@ -1,25 +1,33 @@
 #include <iostream>
 
+using namespace std;
+
 #include "iothub_client.h"
 #include "iothubtransportamqp.h"
 
-static const char *connectionString = "[connection string]";
-
-int main()
+int main(int argc, char* argv[])
 {
+	if (argc != 2)
+	{
+		cout << "Provide connection string as first parameter" << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	const char *connectionString = argv[1];
+
 	IOTHUB_CLIENT_HANDLE iotHubClientHandle;
 	if ((iotHubClientHandle = IoTHubClient_CreateFromConnectionString(connectionString, AMQP_Protocol)) == NULL)
 	{
-		std::cout << "Failed to instantiate iot hub" << std::endl;
+		cout << "Failed to instantiate iot hub" << endl;
 	}
 	else
 	{
-		std::cout << "Successfully connected to iot hub" << std::endl;
+		cout << "Successfully connected to iot hub" << endl;
 	}
 
-	std::cout << "Press any key to exit the application" << std::endl;
+	cout << "Press any key to exit the application" << endl;
 
-	std::getchar();
+	getchar();
 
 	IoTHubClient_Destroy(iotHubClientHandle);
 
