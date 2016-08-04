@@ -1,0 +1,2 @@
+#define iot_sample_VERSION_MAJOR @iot_sample_VERSION_MAJOR@
+#define iot_sample_VERSION_MINOR @iot_sample_VERSION_MINOR@

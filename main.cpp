@@ -2,14 +2,17 @@
 
 using namespace std;
 
+#include "iot_sample.h"
 #include "iothub_client.h"
 #include "iothubtransportamqp.h"
 
 int main(int argc, char* argv[])
 {
+	cout << argv[0] << " Version " << iot_sample_VERSION_MAJOR << "." << iot_sample_VERSION_MINOR << '\n';
+
 	if (argc != 2)
 	{
-		cout << "Provide connection string as first parameter" << endl;
+		cout << "Provide connection string as first parameter" << '\n';
 		exit(EXIT_FAILURE);
 	}
 
