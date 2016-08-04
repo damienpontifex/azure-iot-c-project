@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 3.0)
 project(iot_sample)
 
 # Version numbers
@@ -28,9 +28,8 @@ add_executable(
 	${iot_sample_h_files}
 )
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_FLAGS "-std=c++14")
+set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_STANDARD 14)
+
 set(skip_unittests ON)
 
 option(skip_unittests "" ON)
