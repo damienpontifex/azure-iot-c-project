@@ -13,10 +13,10 @@ configure_file(
 # Add the binary tree to the search path for include files so we can find iot_sample.h
 include_directories("${PROJECT_BINARY_DIR}")
 
-include_directories(inc)
+include_directories(${PROJECT_SOURCE_DIR}/inc)
 
 set(iot_sample_c_files
-	main.cpp
+	src/main.cpp
 	src/iothub_sample.cpp
 )
 
@@ -32,7 +32,7 @@ add_executable(
 set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_STANDARD 14)
 
 # Link in our external submodule lib sources
-add_subdirectory(lib)
+add_subdirectory(${PROJECT_SOURCE_DIR}/lib)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
 	iothub_client
