@@ -30,6 +30,8 @@ add_executable(
 )
 
 set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_STANDARD 14)
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os -Wno-unused-variable")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -Og")
 
 # Link in our external submodule lib sources
 add_subdirectory(${PROJECT_SOURCE_DIR}/lib)
